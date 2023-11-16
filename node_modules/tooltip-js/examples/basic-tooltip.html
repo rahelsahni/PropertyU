@@ -1,0 +1,55 @@
+<html lang="">
+<head>
+    <title>Tooltip Example</title>
+</head>
+<style>
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+    .my-tooltip {
+        display: none;
+        background-color: lightblue;
+        position: absolute;
+        top: -20px;
+        left: 0;
+        color: blue;
+        text-align: center;
+    }
+
+    .my-tooltip-active {
+        display: block;
+    }
+
+</style>
+<body>
+    <section>
+        <div class="my-tooltip">Tooltip</div>
+        <button class="my-tooltip-toggle-btn">Toggle</button>
+    </section>
+
+    <!-- update the path to scroll script below -->
+    <script src="../dist/tooltip.js"></script>
+    <script>
+        var tooltip = new Tooltip({
+            el: document.body.querySelector('.my-tooltip'),
+            activeClass: 'my-tooltip-active',
+            triggerClass: 'my-tooltip-toggle-btn',
+            showEvent: 'mouseenter',
+            hideEvent: 'mouseleave',
+        });
+    </script>
+</body>
+</html>
